@@ -9,10 +9,10 @@ function Consultorio(_nombre, _pacientes) {
     this._nombre = nuevoNombre;
   }
   Consultorio.prototype.getPaciente = function() {
-    return this.paciente;
+    return this.pacientes;
     }
   Consultorio.prototype.setPaciente = function (nuevoPaciente){
-    this._paciente = nuevoPaciente;
+    this._pacientes = nuevoPaciente;
   }
 }
 
@@ -47,3 +47,17 @@ function Paciente (_nombreP, _edad = 0, _rut, _diagnostico){
     this._setDiagnostico = nuevoDiagnostico; 
   }
 }
+
+Consultorio.prototype.agregarPaciente = function (pacienteFinal){
+  this._paciente.push(pacienteFinal);
+}
+
+//var nuevoConsultorio = new Consultorio('Mi nuevo consultorio', []);
+
+var nuevoPaciente1 = new Paciente('Maria', 29, '11.111.111-1', 'Ser fabuloso');
+var nuevoPaciente2 = new Paciente('miguel', 13, '11.111.111-2', 'Ser Aburrido');
+var nuevoPaciente3 = new Paciente('Tamara', 22, '11.111.111-3', 'Ser Aburrido 2');
+var nuevoPaciente4 = new Paciente('Nicolas', 50, '11.111.111-4', 'Ser Aburrido 3');
+
+var pacientes = [nuevoPaciente1, nuevoPaciente2, nuevoPaciente3, nuevoPaciente4];
+nuevoConsultorio.setPacientes(pacientes)
